@@ -109,6 +109,7 @@ class AddQuestionAPI(APIView):
         response['status'] = 500
         try:
             data = request.data
+            print(data)
             form = SurveyForm.objects.get(pk=int(data["formId"]))
             new_question = Question.objects.create(
                 question_statement=data["question"],
@@ -137,6 +138,7 @@ class SumbitFormAPI(APIView):
         response['status'] = 500
         try:
             data = request.data
+            print(data)
             author = data.get('author', 'No author')
             if author != "No author":
                 del data['author']

@@ -23,7 +23,6 @@ const reducer = (state = initialState, action) => {
 			return { ...state, newState };
 		case "POPULATE_FORM_CARDS":
 			action.payload.map((k, v) => {
-				console.log(k);
 				newState.cards.push({
 					name: k["name"],
 					id: k["id"],
@@ -32,29 +31,11 @@ const reducer = (state = initialState, action) => {
 					url: k["url"]
 				});
 			});
-			console.log(newState.cards);
 			return { ...state, newState };
-		case "HANDLE_OK":
-			console.log(action.payload);
-			axios({
-				method: "post",
-				url: "http://127.0.0.1:8000/add-question/",
-				data: action.payload
-			}).then(res => {
-				console.log(res);
-			});
-
+		case "HANDLE_OK_ASYNC":
 			newState.showAddQuestionModal = false;
 			return { ...newState };
-		case "SUBMIT_FORM":
-			axios({
-				method: "post",
-				url: "http://127.0.0.1:8000/submit-form/",
-				data: action.payload
-			}).then(res => {
-				console.log(res);
-			});
-
+		case "SUBMIT_FORM_ASYNC":
 			newState.showAddQuestionModal = false;
 			return { ...newState };
 		case "HANDLE_CANCEL":
@@ -64,21 +45,19 @@ const reducer = (state = initialState, action) => {
 		case "LOGIN_USER":
 			// return authSuccess(state, action);
 			break;
-		case "CREATE_NEW_FORM":
-			axios({
-				method: "post",
-				url: "http://127.0.0.1:8000/create-form/",
-				data: action.payload
-			}).then(res => {
-				console.log(res);
-			});
-			return { ...newState };
+		// case "CREATE_NEW_FORM_ASYNC":
+		// 	axios({
+		// 		method: "post",
+		// 		url: "http://127.0.0.1:8000/create-form/",
+		// 		data: action.payload
+		// 	}).then(res => {
+		// 		console.log(res);
+		// 	});
+		// 	return { ...newState };
 
 		default:
 			return state;
 	}
-
-	// return newState;
 };
 
 export default reducer;

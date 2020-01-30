@@ -24,14 +24,12 @@ class SubmitForm extends React.Component {
 		this.setState({
 			[e.target.id]: e.target.value
 		});
-		console.log(this.state);
 	}
 	handleSubmit = e => {
 		e.preventDefault();
 
-		console.log("from submit form ", this.state);
-		this.props.submitForm(this.state);
-		this.props.history.push("/");
+		this.props.submitFrm(this.state);
+		// this.props.history.push("/thank-you/");
 	};
 	componentDidMount() {
 		let formId = this.props.match.params.formId;
@@ -98,7 +96,7 @@ const mapStateToProps = state => {
 const mapDispathcToProps = dispatch => {
 	return {
 		populateQue: e => dispatch(populateQuestion(e)),
-		submitForm: e => dispatch(submitForm(e))
+		submitFrm: e => dispatch(submitForm(e))
 	};
 };
 
