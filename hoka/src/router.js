@@ -6,6 +6,7 @@ import Form from "./containers/form/Form";
 import FormDetails from "./containers/form-details/FormDetails";
 import SubmitForm from "./containers/submit-form/SubmitForm";
 import ThanksYou from "./components/thank-you/ThankYou";
+import CreateForm from "./containers/create-form/CreateForm";
 
 const BaseRouter = () => (
 	<div>
@@ -14,6 +15,7 @@ const BaseRouter = () => (
 		<Route exact path="/form/" component={Form}></Route>
 		<Route exact path="/submit-form/:formId" component={SubmitForm}></Route>
 		<Route exact path="/thank-you/" component={ThanksYou}></Route>
+		<Route exact path="/create-form/" component={CreateForm}></Route>
 
 		<Route
 			exact

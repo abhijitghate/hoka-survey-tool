@@ -1,0 +1,35 @@
+.ant-form-item-control {
+	width: 300px;
+}
+.ant-form-item-label {
+	float: left;
+}
+
+.create-form-container {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.ant-form {
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.ant-col-sm-20 {
+	padding-left: 70px;
+}
+
+.form-details-style {
+	/* padding: 10px;
+	background-color: rgb(244, 239, 248);
+	border-radius: 5px;
+	box-shadow: -3px 3px 6px -2px rgba(0, 0, 0, 0.75); */
+}
+
+.buttons {
+	right: 20%;
+}

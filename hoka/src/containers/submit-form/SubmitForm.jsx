@@ -29,7 +29,7 @@ class SubmitForm extends React.Component {
 		e.preventDefault();
 
 		this.props.submitFrm(this.state);
-		// this.props.history.push("/thank-you/");
+		this.props.history.push("/thank-you/");
 	};
 	componentDidMount() {
 		let formId = this.props.match.params.formId;

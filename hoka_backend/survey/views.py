@@ -198,3 +198,31 @@ class CreateFormAPI(APIView):
 
 
 CreateForm = CreateFormAPI.as_view()
+
+
+class CreateFormAPI(APIView):
+    authentication_classes = (
+        CsrfExemptSessionAuthentication, BasicAuthentication)
+
+    def post(self, request, *args, **kwargs):
+        response = {}
+        response['status'] = 500
+        try:
+            data = request.data
+            questions = data.get("names", "")
+            form = SurveyForm.objects.create(form_name=questions[0])
+            for question in questions[1:]:
+                temp_question = Question.objects.create(
+                    question_statement=question, form=form)
+
+            response['status'] = 200
+
+        except Exception as e:
+
+            exc_type, exc_obj, exc_tb = sys.exc_info()
+            print("CreateFormAPI: %s at %s",
+                  e, str(exc_tb.tb_lineno))
+        return Response(data=response)
+
+
+CreateForm = CreateFormAPI.as_view()

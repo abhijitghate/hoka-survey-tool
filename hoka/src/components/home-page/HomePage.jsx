@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./HomePage.css";
 import { connect } from "react-redux";
 
@@ -22,7 +23,15 @@ class HomePage extends React.Component {
 						defaultSelectedKeys={["1"]}
 						style={{ lineHeight: "64px" }}
 					>
-						<Menu.Item key="1">Home</Menu.Item>
+						<Menu.Item key="1">
+							<Link to="/home-page/" />
+							Home
+						</Menu.Item>
+
+						<Menu.Item href="/create-form/" key="2">
+							<Link to="/create-form/" />
+							Create Form
+						</Menu.Item>
 					</Menu>
 				</Header>
 				<Content style={{ padding: "0 50px" }}>
