@@ -81,7 +81,7 @@ class FetchFormCardsAPI(APIView):
                     temp_dict["respondants"].append(x.respondant_name)
                 for question in questions:
                     answers = Answer.objects.filter(question=question)
-                temp_dict["url"] = "http://localhost:3000/submit-form/" + \
+                temp_dict["url"] = "http://13.233.138.223/submit-form/" + \
                     str(form.pk)
                 temp_dict['formId'] = form.pk
                 form_list.append(temp_dict)

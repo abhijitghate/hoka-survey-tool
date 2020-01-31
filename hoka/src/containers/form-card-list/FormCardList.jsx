@@ -5,6 +5,7 @@ import { populateFormCards } from "../../store/actions/actions";
 import "../../store/reducers/reducer";
 import "./FormCardList.css";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 class FormCardList extends React.Component {
 	constructor(props) {
@@ -49,9 +50,10 @@ class FormCardList extends React.Component {
 						bordered={true}
 						hoverable
 						extra={
-							<a className="edit-link" href={href_card}>
-								Edit
-							</a>
+							// <a className="edit-link" href={href_card}>
+							// 	Edit
+							// </a>
+							<Link to={href_card}>Edit</Link>
 						}
 						className="card-style"
 					>
@@ -59,8 +61,16 @@ class FormCardList extends React.Component {
 							<p></p>
 							<p>Responses - {key["numberOfResponses"]}</p>
 							<p>Respondants - {respondants}</p>
-							<a href={key["url"]}>link</a>
-							<p>{key["url"]}</p>
+							<p href={key["url"]}>
+								<Link
+									to={
+										"/submit-form/" +
+										key["url"].split("/")[4]
+									}
+								>
+									link
+								</Link>
+							</p>
 						</div>
 					</Card>
 				</Col>

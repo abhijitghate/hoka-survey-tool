@@ -28,9 +28,8 @@ class HomePage extends React.Component {
 							Home
 						</Menu.Item>
 
-						<Menu.Item href="/create-form/" key="2">
-							<Link to="/create-form/" />
-							Create Form
+						<Menu.Item key="2">
+							<Link to="/create-form/">Create Form</Link>
 						</Menu.Item>
 					</Menu>
 				</Header>
