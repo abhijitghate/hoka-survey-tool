@@ -15,7 +15,7 @@ import React from "react";
 
 // export default CreateForm
 
-import { Form, Input, Icon, Button } from "antd";
+import { Form, Input, Icon, Button, Row, Col } from "antd";
 import axios from "axios";
 import "./CreateForm.css";
 
@@ -60,14 +60,14 @@ class CreateForm1 extends React.Component {
 					keys.map(key => names[key])
 				);
 			}
-			// axios({
-			// 	method: "post",
-			// 	url: "http://127.0.0.1:8000/create-form/",
-			// 	data: values
-			// }).then(res => {
-			// 	this.props.history.push("/home-page/");
-			// 	console.log(res);
-			// });
+			axios({
+				method: "post",
+				url: "http://127.0.0.1:8000/create-form/",
+				data: values
+			}).then(res => {
+				this.props.history.push("/home-page/");
+				console.log(res);
+			});
 		});
 	};
 
@@ -124,8 +124,12 @@ class CreateForm1 extends React.Component {
 			</Form.Item>
 		));
 		return (
-			<div className="create-form-container">
-				<div className="form-details-style">
+			<Row
+				align="middle"
+				justify="center"
+				className="create-form-container"
+			>
+				<Col span={24}>
 					<Form onSubmit={this.handleSubmit}>
 						{formItems}
 						<div>
@@ -150,8 +154,8 @@ class CreateForm1 extends React.Component {
 							</Form.Item>
 						</div>
 					</Form>
-				</div>
-			</div>
+				</Col>
+			</Row>
 		);
 	}
 }
