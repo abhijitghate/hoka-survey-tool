@@ -10,7 +10,7 @@ import CreateForm from "./containers/create-form/CreateForm";
 
 const BaseRouter = () => (
 	<div>
-		<Route exact path="/" component={LoginPage}></Route>
+		<Route exact path="/" component={HomePage}></Route>
 		<Route exact path="/home-page/" component={HomePage}></Route>
 		<Route exact path="/form/" component={Form}></Route>
 		<Route exact path="/submit-form/:formId" component={SubmitForm}></Route>
