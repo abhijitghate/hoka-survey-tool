@@ -6,7 +6,8 @@ import {
 	addQuestion,
 	populateQuestion,
 	handleOk,
-	handleCancel
+	handleCancel,
+	clearQuestionsMethod
 } from "../../store/actions/actions";
 import axios from "axios";
 import "./FormDetails.css";
@@ -29,7 +30,7 @@ class FormDetails extends React.Component {
 		let formId = this.props.match.params.formId;
 		axios({
 			method: "post",
-			url: "http://127.0.0.1:8000/fetch-questions/",
+			url: "http://13.233.138.223:8000/fetch-questions/",
 			data: { formId: formId }
 		}).then(res => {
 			let questionList = [];
@@ -42,6 +43,9 @@ class FormDetails extends React.Component {
 
 			this.props.populateQue(questionList);
 		});
+	}
+	componentWillUnmount() {
+		this.props.clearQuestions();
 	}
 	render() {
 		let data_obj = {
@@ -82,7 +86,8 @@ const mapDispathcToProps = dispatch => {
 		addQue: e => dispatch(addQuestion(e)),
 		populateQue: e => dispatch(populateQuestion(e)),
 		handleOkModal: e => dispatch(handleOk(e)),
-		handleCancelModal: () => dispatch(handleCancel())
+		handleCancelModal: () => dispatch(handleCancel()),
+		clearQuestions: () => dispatch(clearQuestionsMethod())
 	};
 };
 

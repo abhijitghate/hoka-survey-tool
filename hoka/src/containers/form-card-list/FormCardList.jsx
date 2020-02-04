@@ -15,7 +15,7 @@ class FormCardList extends React.Component {
 	componentDidMount() {
 		axios({
 			method: "post",
-			url: "http://127.0.0.1:8000/fetch-forms-cards/",
+			url: "http://13.233.138.223:8000/fetch-forms-cards/",
 			data: {}
 		}).then(res => {
 			console.log("printing rsponse from formcardlist", res);

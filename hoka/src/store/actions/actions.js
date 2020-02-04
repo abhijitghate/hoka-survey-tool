@@ -50,3 +50,10 @@ export const createNewForm = payload => {
 		payload
 	};
 };
+
+export const clearQuestionsMethod = payload => {
+	return {
+		type: "CLEAR_QUESTIONS",
+		payload
+	};
+};

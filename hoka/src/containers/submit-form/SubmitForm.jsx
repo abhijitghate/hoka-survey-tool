@@ -38,7 +38,7 @@ class SubmitForm extends React.Component {
 		});
 		axios({
 			method: "post",
-			url: "http://127.0.0.1:8000/fetch-questions/",
+			url: "http://13.233.138.223:8000/fetch-questions/",
 			data: { formId: formId }
 		}).then(res => {
 			console.log(res);

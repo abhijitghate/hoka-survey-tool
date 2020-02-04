@@ -42,13 +42,16 @@ const reducer = (state = initialState, action) => {
 			newState.showAddQuestionModal = false;
 
 			return { ...newState };
+		case "CLEAR_QUESTIONS":
+			newState.questions = [];
+			return { ...state, newState };
 		case "LOGIN_USER":
 			// return authSuccess(state, action);
 			break;
 		// case "CREATE_NEW_FORM_ASYNC":
 		// 	axios({
 		// 		method: "post",
-		// 		url: "http://127.0.0.1:8000/create-form/",
+		// 		url: "http://13.233.138.223:8000/create-form/",
 		// 		data: action.payload
 		// 	}).then(res => {
 		// 		console.log(res);

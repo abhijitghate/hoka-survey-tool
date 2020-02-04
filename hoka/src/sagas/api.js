@@ -5,7 +5,7 @@ export const submitFormApi = async d => {
 		console.log("async", d);
 		const response = await axios({
 			method: "post",
-			url: "http://127.0.0.1:8000/submit-form/",
+			url: "http://13.233.138.223:8000/submit-form/",
 			data: d
 		});
 		const data = await response.json();
@@ -20,7 +20,7 @@ export const handleOkApi = async d => {
 		console.log("async", d);
 		const response = await axios({
 			method: "post",
-			url: "http://127.0.0.1:8000/add-question/",
+			url: "http://13.233.138.223:8000/add-question/",
 			data: d
 		}).then(res => {
 			console.log(res);

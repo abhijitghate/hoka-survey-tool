@@ -62,7 +62,7 @@ class CreateForm1 extends React.Component {
 			}
 			axios({
 				method: "post",
-				url: "http://127.0.0.1:8000/create-form/",
+				url: "http://13.233.138.223:8000/create-form/",
 				data: values
 			}).then(res => {
 				this.props.history.push("/home-page/");
